@@ -52,5 +52,12 @@
     .s-mt-16{
         margin-top: 16px !important;
     }
+    .s-text-size{
+        font-size: 5px !important;
+        height: 30px;
+    }
+    .s-text-size h2{
+        padding-bottom: 0;
+    }
 
 }
