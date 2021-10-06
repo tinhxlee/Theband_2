@@ -8,10 +8,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <script src="https://kit.fontawesome.com/23eb3f6a6e.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./asset/style/style.css">
+    <link rel="stylesheet" href="./asset/style/responsive.css">
 </head>
 <body>
     <div class="main">
-        <div class="header">
+        <div id="idheader" class="header">
 
             <!-- Begin nav -->
             <ul class="nav">
@@ -34,6 +35,9 @@
             <div class="search-btn">
                 <i class="search-icon fas fa-search"></i>
             </div>
+            <div id="menu-mobile" class="menu-btn-mobile-responsive">
+                <i class="menu-icon fas fa-bars"></i>
+            </div>
             <!-- Begin Search button -->
         </div>
         
@@ -55,17 +59,17 @@
                 <p class="infor">We have created a fictional band website. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 
                 <div class="row">
-                    <div class="text-center col col-third pt-48">
+                    <div class="member-item text-center col col-third s-col-full mt-32">
                         <p class="name-member">TINHXLEE</p>
                         <img src="./asset/image/Member/myava2.jpg" alt="Den Vau" class="avatar-member">
                     </div>
 
-                    <div class="text-center col col-third pt-48">
-                        <p class="name-member">Den Vau</p>
+                    <div class="member-item text-center col col-third mt-32">
+                        <p class="name-member">DEN VAU</p>
                         <img src="./asset/image/Member/avatar-denvau.jpg" alt="Den Vau" class="avatar-member">
                     </div>
 
-                    <div class="text-center col col-third pt-48">
+                    <div class="member-item text-center col col-third mt-32">
                         <p class="name-member">SUNSHINE</p>
                         <img src="./asset/image/Member/anhduong.jpg" alt="Den Vau" class="avatar-member">    
                     </div>
@@ -84,7 +88,7 @@
                         <li>November <span class="pull-right count-number">3</span></li>
                     </ul>
                     <div class="row tour-place">
-                        <div class="tour-place-item col col-third">
+                        <div class=" mt-26 tour-place-item col col-third s-col-full">
                             <img src="./asset/image/Location-Tour/hanu.jpg" alt="" class="place-img">
                             <div class="content-place">
                                 <h3>Hanu</h3>
@@ -96,7 +100,7 @@
                             </div>
                         </div>
     
-                        <div  class="tour-place-item col col-third">
+                        <div  class=" mt-26 tour-place-item col col-third s-col-full">
                             <img src="./asset/image/Location-Tour/vinui3.jpg" alt="" class="place-img">
                             <div class="content-place">
                                 <h3>UTC</h3>
@@ -107,7 +111,7 @@
     
                             </div>
                         </div>
-                        <div class="tour-place-item col col-third">
+                        <div class=" mt-26 tour-place-item col col-third s-col-full">
                             <img src="./asset/image/Location-Tour/ulis3.jpg" alt="" class="place-img">
                             <div class="content-place">
                                 <h3>Ulis</h3>
@@ -129,19 +133,19 @@
                 <h2 class="content-heading">Contact</h2>
                 <div class="content-sub-heading">Connect with us</div>
                 <div class="row">
-                    <div class="contact-content col col-hafl">
-                        <p><i class="fas fa-location-arrow"></i>Mai son, VIE</p>
+                    <div class="contact-content col col-hafl s-col-full">
+                        <p><i class="fas fa-location-arrow"></i>MAI SON, VN</p>
                         <p><i class="fas fa-phone-alt"></i>Phone: +84 966777833</p>
                         <p><i class="fas fa-envelope"></i>Email: letrongtinh03@gmail.com</p>
                     </div>
-                    <div class="contact-input col col-hafl">
+                    <div class="contact-input col col-hafl s-col-full">
                         <form action="">
                             <div class="row">
-                                <div class="col col-hafl">
+                                <div class="col col-hafl s-col-full s-mt-16">
                                     <input required  type="text" placeholder="Name" class="form-control">
 
                                 </div>
-                                <div class="col col-hafl">
+                                <div class="col col-hafl s-col-full s-mt-8">
                                     <input required  type="email" placeholder="Email" class="form-control">
 
                                 </div>
@@ -151,7 +155,7 @@
                                     <input required  type="text" placeholder="Message" class="form-control mt-8">
                                 </div>
                             </div>
-                            <input required type="submit" class="btn mt-8 pull-right" value="SEND">
+                            <input required type="submit" class="btn mt-8 pull-right s-col-full" value="SEND">
                         </form>
                     </div>
     
@@ -245,7 +249,54 @@
 
         }
         modalContainer.addEventListener('click',Modalcontainer)
-    </script>    
+    </script>  
+    
+    <!-- Js menu mobile button -->
+    <script>
+        // Khai báo biến header 
+        var header = document.getElementById('idheader');
+        // in ra class header trên console để kiểm tra
+        console.log(header);
+        // Khai báo biến mobileMenu
+        var mobileMenu = document.getElementById('menu-mobile');
+        // in ra class để kiểm tra
+        console.log(mobileMenu);
+        // gán 1 biến cho header height để chỉnh css cho dễ
+        var headerHeight = header.clientHeight;
+        // Đóng mở mobile menu
+        mobileMenu.onclick = function(){
+            var isClose = header.clientHeight === headerHeight ;
+            if(isClose)
+            {
+                header.style.height = 'auto';
+            }
+            else
+            {
+                header.style.height = null;
+            }
+        }
+        // Tự động đóng khi chọn menu
+        var menuItems = document.querySelectorAll('.nav a[href *= "#"] ');
+        console.log(menuItems);
+        for(var i = 0 ; i < menuItems.length ; i ++ )
+        {
+            var menuItem = menuItems[i];
+            menuItem.onclick = function(event)
+            { 
+                // Nếu thỏa mãn điều kiện thẻ a có thẻ anh chị và thẻ anh chị đó bằng subnav thì nó sẽ được gán vào biến isParentmenu
+                var isParentmenu = this.nextElementSibling && this.nextElementSibling.classList.contains('subnav');  
+                if(isParentmenu)
+                {
+                    event.preventDefault(); 
+                }
+                else 
+                {           
+                    header.style.height = null;
+                }           
+            }
+        }
+
+    </script>
 
 
 </body>
