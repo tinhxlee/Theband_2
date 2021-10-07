@@ -93,7 +93,7 @@ html{
     cursor: pointer;
     border: none !important;
     font-size: 20px;
-    /* -webkit-appearance: none; */
+    -webkit-appearance: none;
     appearance: none;
 }
 .btn:hover{
