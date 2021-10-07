@@ -59,5 +59,8 @@
     .s-text-size h2{
         padding-bottom: 0;
     }
+    .social a{
+        padding: 8px;
+    }
 
 }
