@@ -83,6 +83,9 @@ html{
 .pull-right{
     float: right;
 }
+.full-width{
+    width: 100% !important;
+}
 .btn{
     background-color: #000;
     padding: 10px 8px;
@@ -90,6 +93,8 @@ html{
     cursor: pointer;
     border: none !important;
     font-size: 20px;
+    appearance: none;
+    -webkit-appearance: none;
 }
 .btn:hover{
     background-color: #ccc;
